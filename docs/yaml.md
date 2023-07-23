@@ -19,3 +19,6 @@ member:
   - name : Bob
     age : 30
 ~~~
+
+- open api 스키마
+https://spec.openapis.org/oas/v3.0.0

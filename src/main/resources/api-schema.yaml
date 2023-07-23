@@ -1,0 +1,17 @@
+# https://spec.openapis.org/oas/v3.0.0#schema
+openapi: "3.0.0"
+# https://spec.openapis.org/oas/v3.0.0#infoObject
+info:
+  title: TODO API Document
+  version: "0.0.1"
+# https://spec.openapis.org/oas/v3.0.0#pathsObject
+paths:
+  # https://spec.openapis.org/oas/v3.0.0#pathItemObject
+  /health:
+    # https://spec.openapis.org/oas/v3.0.0#operationObject
+    get:
+      responses:
+        '200'
+          description: OK
+
+  
