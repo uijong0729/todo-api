@@ -22,3 +22,11 @@ member:
 
 - open api 스키마
 https://spec.openapis.org/oas/v3.0.0
+
+- open api 플러그인 설치
+openAPI (Swagger) Editor Plugin
+- open api 플로그인으로 swagger화면 미리보기
+1. F1을 누른다.
+2. swagger를 검색
+3. OpenAPI: show preview using Swagger UI를 실행
+

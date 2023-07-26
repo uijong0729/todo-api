@@ -11,7 +11,7 @@ paths:
     # https://spec.openapis.org/oas/v3.0.0#operationObject
     get:
       responses:
-        '200'
+        '200':
           description: OK
 
   
