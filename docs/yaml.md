@@ -30,3 +30,31 @@ openAPI (Swagger) Editor Plugin
 2. swagger를 검색
 3. OpenAPI: show preview using Swagger UI를 실행
 
+- OpenAPI Generator Gradle Plugin
+1. build.gradle파일에 플러그인 추가
+~~~
+plugins {
+	...
+	id 'org.openapi.generator' version "5.3.0"
+}
+~~~
+2. task실행하기
+~~~
+$ ./gradlew openApiGenerators
+~~~
+3. 아래 로그가 출력 된 것을 확인하기
+~~~
+CLIENT generators:
+    - ada
+    - android
+    - apex
+    - bash
+    - c
+    - clojure
+    - cpp-qt-client
+
+    (...)
+    
+BUILD SUCCESSFUL in 1s
+1 actionable task: 1 executed
+~~~
