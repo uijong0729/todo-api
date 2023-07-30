@@ -58,3 +58,24 @@ CLIENT generators:
 BUILD SUCCESSFUL in 1s
 1 actionable task: 1 executed
 ~~~
+
+- Html2 Generator
+1. 참고
+> https://github.com/OpenAPITools/openapi-generator/tree/master/modules/openapi-generator-gradle-plugin#generate-multiple-sources
+
+2. build.gradle 태스크 추가
+~~~
+task buildApiClient(type: org.openapitools.generator.gradle.plugin.tasks.GenerateTask) {
+    generatorName.set("html2")
+    inputSpec.set("$rootDir/src/main/resources/api-schema.yaml")
+    outputDir.set("$buildDir/apidoc")
+}
+~~~
+
+
+3. task실행하기
+~~~
+$ ./gradlew buildApiClient
+~~~
+
+4. task 실행결과 `..\todo-api\build/apidoc에` 파일생성을 확인
