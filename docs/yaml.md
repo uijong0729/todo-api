@@ -1,3 +1,4 @@
+# yaml
 - yaml : 리스트나 연관배열을 사용해서 데이터를 써가는 포맷
 - online yaml parser : https://yaml-online-parser.appspot.com/
 - 작성 예1
@@ -20,7 +21,7 @@ member:
     age : 30
 ~~~
 
-- open api 스키마
+# open api 스키마
 https://spec.openapis.org/oas/v3.0.0
 
 - open api 플러그인 설치
@@ -59,23 +60,50 @@ BUILD SUCCESSFUL in 1s
 1 actionable task: 1 executed
 ~~~
 
-- Html2 Generator
+## Html2 Generator
 1. 참고
 > https://github.com/OpenAPITools/openapi-generator/tree/master/modules/openapi-generator-gradle-plugin#generate-multiple-sources
 
 2. build.gradle 태스크 추가
 ~~~
-task buildApiClient(type: org.openapitools.generator.gradle.plugin.tasks.GenerateTask) {
+task buildApiDoc(type: org.openapitools.generator.gradle.plugin.tasks.GenerateTask) {
     generatorName.set("html2")
     inputSpec.set("$rootDir/src/main/resources/api-schema.yaml")
     outputDir.set("$buildDir/apidoc")
 }
 ~~~
 
-
 3. task실행하기
 ~~~
-$ ./gradlew buildApiClient
+$ ./gradlew buildApiDoc
 ~~~
 
 4. task 실행결과 `..\todo-api\build/apidoc에` 파일생성을 확인
+
+## Spring Generator
+
+1. 참고 
+ - gradle참고 : https://github.com/OpenAPITools/openapi-generator/tree/master/modules/openapi-generator-gradle-plugin#generate-multiple-sources
+ - 문서 : https://openapi-generator.tech/docs/generators/spring/
+
+2. build.gradle에 기재
+~~~
+task buildSpringServer(type: org.openapitools.generator.gradle.plugin.tasks.GenerateTask) {
+    generatorName.set("spring")
+    inputSpec.set("$rootDir/src/main/resources/api-schema.yaml")
+    outputDir.set("$buildDir/spring")
+    apiPackage.set("com.example.todoapi.controller")
+    modelPackage.set("com.example.todoapi.model")
+    configOptions.set([
+            interfaceOnly: "true"
+    ])
+}
+~~~
+
+3. task실행하기
+~~~
+$ ./gradlew buildSpringServer
+~~~
+
+
+4. 실행결과 ../build/spring폴더가 생성된 것을 확인
