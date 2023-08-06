@@ -107,3 +107,17 @@ $ ./gradlew buildSpringServer
 
 
 4. 실행결과 ../build/spring폴더가 생성된 것을 확인
+
+
+# Task 의존관계 정의
+- 컴파일 후 빌드 하도록 순서를 정의
+build.gradle
+~~~
+compileJava.dependsOn tasks.buildSpringServer
+~~~
+
+- 의존관계가 잘 정의됐는지 확인
+buildSpringServer태스크가 종료된 후 compileJava태스크가 실행되는 것을 확인
+~~~
+$ ./gradlew compileJava
+~~~
