@@ -121,3 +121,17 @@ buildSpringServer태스크가 종료된 후 compileJava태스크가 실행되는
 ~~~
 $ ./gradlew compileJava
 ~~~
+
+## 자동 생성한 코드를 Import할 수 있도록 설정
+- build.gradle
+~~~
+sourceSets.main.java.srcDir "$buildDir/spring/src/main/java"
+~~~
+
+- gradle refresh
+~~~
+$ gradle clean
+$ ./gradlew compileJava
+$ gradle --refresh-dependencies build
+~~~
+
