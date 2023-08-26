@@ -149,7 +149,15 @@ sourceSets {
 ~~~
 
 ## 어플리케이션 시동에 필요한 라이브러리를 추가하기
+- gradle.build
 ~~~groovy
 implementation 'org.springframework.boot:spring-boot-starter-validation'
 compileOnly 'io.swagger:swagger-annotations:1.6.5'
 ~~~
+
+- 실행시켜보기
+~~~
+gradle bootrun
+~~~
+
+- http://localhost:8080/health
