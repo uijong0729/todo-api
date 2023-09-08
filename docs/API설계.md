@@ -1,0 +1,38 @@
+## 1. URI를 정하는 룰
+
+- 영어로 복수형의 명사를 사용
+~~~
+https://example.com/tasks
+~~~
+- 대문자는 사용하지 않는다
+- 소문자와 숫자와 하이픈으로 구성
+~~~
+https://example.com/task-lists
+~~~
+
+## 2. HTTP 메소드를 정하는 룰
+- GET : 습득
+- POST : 삭제
+- PUT : 갱신(치환)
+- DELETE : 삭제
+- PATCH : 갱신(부분)
+
+## 3. HTTP와 URI를 조합해서 엔드포인트를 설계
+|메소드|Path|내용|
+|--|--|--|
+|GET|/tasks|task일람|
+|POST|/tasks|task작성|
+|GET|/tasks/:id|task상세|
+|PUT|/tasks/:id|task갱신|
+|DELETE|/tasks/:id|task삭제|
+
+## 4. HTTP 메소드의 특징
+1. 멱등성(冪等性：べきとうせい)
+    - 같은 요청에 대해서 항상 같은 결과를 보장하는 성질
+    - 메소드 예 : GET, PUT, DELETE
+2. 안전성
+    - 데이터를 갱신하지 않기에 리소스 상태에 영향을 주지 않음
+    - 메소드 예 : GET
+3. NG예시
+    - GET메소드에서 갱신이 발생
+    - 항상 최신의 레코드를 삭제하는 요청에 DELETE 메소드를 사용한 경우 멱등성이 성립하지 않기에 부적절한 설계
