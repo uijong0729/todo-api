@@ -36,3 +36,41 @@ https://example.com/task-lists
 3. NG예시
     - GET메소드에서 갱신이 발생
     - 항상 최신의 레코드를 삭제하는 요청에 DELETE 메소드를 사용한 경우 멱등성이 성립하지 않기에 부적절한 설계
+
+## 5. Request 설계
+~~~
+POST /tasks HTTP/1.1
+Host: example.com
+Content-Type: application/json
+
+{"title":"this is title"}
+~~~
+- Path Parameter
+    - 예: /tasks/999
+- Query Parameter
+    - 예: /tasks/999?fields=title
+- Request Body
+    - 예: { title: "hoge" }
+
+## 6. Response 설계
+~~~
+HTTP/1.1 200
+Host: example.com
+Date: ...
+
+{"title":"my task"}
+~~~
+- 2xx계
+    - Success
+    - 200 : OK
+    - 201 : Created
+    - 204 : No Content(리소스 삭제성공)
+- 3xx계
+    - Redirection
+- 4xx계
+    - Client Error
+    - 400 : Bad Request(리퀘스트 형식에 잘못이 있음)
+    - 404 : Not Found(요구한 리소스가 없음)
+- 5xx계
+    - Server Error
+    - 500 : Internal Server Error
