@@ -74,3 +74,12 @@ Date: ...
 - 5xx계
     - Server Error
     - 500 : Internal Server Error
+
+## 7. 3층 아키텍쳐
+- 코드를 3개의 관심사로 분류하는 것
+    - 프레젠테이션 층 : @Controller
+    - 비즈니스 로직 층 : @Service
+    - 데이터 액세스 층 : @Repository
+- Entity : 각 값이 불변하는 변수
+- DTO, Form : 각 항목들이 바뀔 수 있는 변수
+
