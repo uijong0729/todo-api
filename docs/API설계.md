@@ -82,4 +82,5 @@ Date: ...
     - 데이터 액세스 층 : @Repository
 - Entity : 각 값이 불변하는 변수
 - DTO, Form : 각 항목들이 바뀔 수 있는 변수
+    - DTO : Data Transfer Object
 
