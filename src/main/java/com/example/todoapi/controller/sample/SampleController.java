@@ -10,13 +10,16 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.todoapi.controller.sample.service.SampleService;
 import com.example.todoapi.controller.sample.service.SampleServiceImpl;
 
+import lombok.RequiredArgsConstructor;
+
 // RestController = Controller + ResponseBody
 // ResponseBody = 컨트롤러의 return이 responseBody로 그대로 반환 됨
 @RequestMapping("/samples")
 @RestController
+@RequiredArgsConstructor
 public class SampleController {
 
-    private final SampleService service = new SampleServiceImpl();
+    private final SampleService service;
     
     // GET http://localhost:8080/samples
     @GetMapping
