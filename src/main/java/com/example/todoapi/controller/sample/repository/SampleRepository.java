@@ -6,6 +6,6 @@ import org.apache.ibatis.annotations.Select;
 @Mapper
 public interface SampleRepository {
     
-    @Select("SELECT * FROM sample ORDER BY id LIMIT 1")
+    @Select("SELECT * FROM samples ORDER BY id LIMIT 1")
     SampleRecord select();
 }
