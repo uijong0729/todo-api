@@ -1,4 +1,9 @@
+# https://spec.openapis.org (메이저 버전간 사양이 다르므로 주의)
+###############################################################
+# 실행방법 : F1을 누르고 OpenAPI: show preview using Swagger UI를 실행
+###############################################################
 # https://spec.openapis.org/oas/v3.0.0#schema
+# 4.7.1.1 fixed fileds (required : openapi, info, paths)
 openapi: "3.0.0"
 # https://spec.openapis.org/oas/v3.0.0#infoObject
 info:
@@ -13,5 +18,8 @@ paths:
       responses:
         '200':
           description: OK
-
-  
+  /tasks/1:
+    get:
+      responses:
+        '200':
+          description: OK
