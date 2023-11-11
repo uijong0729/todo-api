@@ -5,21 +5,34 @@
 # https://spec.openapis.org/oas/v3.0.0#schema
 # 4.7.1.1 fixed fileds (required : openapi, info, paths)
 openapi: "3.0.0"
+
 # https://spec.openapis.org/oas/v3.0.0#infoObject
 info:
   title: TODO API Document
   version: "0.0.1"
+
+# swagger ui상에서 tag로 그룹화 가능
+tags:
+  - name: operations
+    description: 運用監視関連API
+  - name: tasks
+    description: タスク関連API
+
 # https://spec.openapis.org/oas/v3.0.0#pathsObject
 paths:
   # https://spec.openapis.org/oas/v3.0.0#pathItemObject
   /health:
     # https://spec.openapis.org/oas/v3.0.0#operationObject
     get:
+      tags:
+        - operations
       responses:
         '200':
           description: OK
   /tasks/1:
     get:
+      tags:
+        - tasks
       responses:
         '200':
           description: OK
