@@ -37,12 +37,14 @@ tasks.named('test') {
 	useJUnitPlatform()
 }
 
+// ./gradlew buildApiDoc
 task buildApiDoc(type: org.openapitools.generator.gradle.plugin.tasks.GenerateTask) {
     generatorName.set("html2")
     inputSpec.set("$rootDir/src/main/resources/api-schema.yaml")
     outputDir.set("$buildDir/apidoc")
 }
 
+// ./gradlew buildSpringServer
 task buildSpringServer(type: org.openapitools.generator.gradle.plugin.tasks.GenerateTask) {
     generatorName.set("spring")
     inputSpec.set("$rootDir/src/main/resources/api-schema.yaml")
