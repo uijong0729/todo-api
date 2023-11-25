@@ -33,6 +33,7 @@ paths:
     get:
       tags:
         - tasks
+      operationId: showTask   # 메소드명을 showTask()로 임의지정 (미지정시 tasks1로 메소드명이 지정 됨)
       responses:
         '200':
           description: OK

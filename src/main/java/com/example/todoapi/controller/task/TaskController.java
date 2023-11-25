@@ -11,7 +11,7 @@ public class TaskController implements TasksApi{
     
     // postman: localhost:8080/tasks/1
     @Override
-    public ResponseEntity<Void> tasks1Get() {
+    public ResponseEntity<Void> showTask() {
         return ResponseEntity.ok().build();
     }
 }
